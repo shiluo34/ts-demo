@@ -1,0 +1,19 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "html",
+    { "language": "vue", "autoFix": true },
+    {
+      "language": "typescript",
+      "autoFix": true
+    },
+    "typescriptreact"
+  ],
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.singleQuote": true,
+  "autoimport.doubleQuotes": true,
+  "javascript.preferences.quoteStyle": "single",
+  "eslint.autoFixOnSave": true,
+  "tslint.autoFixOnSave": true,
+}

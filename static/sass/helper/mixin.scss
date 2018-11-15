@@ -1,0 +1,113 @@
+@mixin size($width: auto, $height: auto) {
+	@if $width != null {
+		width: $width;
+	}
+	@if $height != null {
+		height: $height
+	}
+}
+
+@mixin box-sizing($type: border-box) {
+	box-sizing: $type;
+	-moz-box-sizing: $type;
+	-webkit-box-sizing: $type;
+}
+
+@mixin font-size($size) {
+    font-size: px2rem($size);
+}
+
+@mixin bg-src($path, $width: 100%, $height: 100%, $pos-width: center, $pos-height: center, $isRepeat: no-repeat) {
+	background-image: url($path);
+	background-size: $width $height;
+	background-position: $pos-width $pos-height;
+	background-repeat: $isRepeat;
+}
+
+@mixin position($type: relative, $top: null, $right: null, $bottom: null, $left: null) {
+	position: $type;
+	@if $top != null {
+		top: $top;
+	}
+	@if $right != null {
+		right: $right;
+	}
+	@if $bottom != null {
+		bottom: $bottom;
+	}
+	@if $left != null {
+		left: $left;
+	}
+}
+
+@mixin text-overflow($width, $isMulti: false, $line: 2) {
+	width: $width;
+	overflow: hidden;
+	@if $isMulti == true {
+		display: -webkit-box;
+		-webkit-line-clamp: $line;
+		-webkit-box-orient: vertical;
+	} @else {
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+}
+
+@mixin bg-gradient($deg, $color1, $color2) {
+	background: linear-gradient($deg, $color1, $color2);    
+    background: -o-linear-gradient($deg, $color1, $color2);
+    background: -moz-linear-gradient($deg, $color1, $color2);
+    background: -webkit-linear-gradient($deg, $color1, $color2);    
+}
+
+@mixin transition($property: all, $type: linear, $duration: .3s) {
+	transition: $property $type $duration;
+	-o-transition: $property $type $duration;
+	-ms-transition: $property $type $duration;
+	-moz-transition: $property $type $duration;
+	-webkit-transition: $property $type $duration;
+}
+
+@mixin animation($name, $duration: .3s, $type: linear, $isInfin: false) {
+	@if $isInfin == true {
+		animation: $name $duration $type infinite;
+		-o-animation: $name $duration $type infinite;
+		-ms-animation: $name $duration $type infinite;
+		-moz-animation: $name $duration $type infinite;
+		-webkit-animation: $name $duration $type infinite;
+	} @else {
+		animation: $name $duration $type;
+		-o-animation: $name $duration $type;
+		-ms-animation: $name $duration $type;
+		-moz-animation: $name $duration $type;
+		-webkit-animation: $name $duration $type;
+	}
+}
+
+@mixin user-select($type: text) {
+	user-select: $type;
+    -ms-user-select: $type;
+    -moz-user-select: $type;
+    -khtml-user-select: $type;
+    -webkit-user-select: $type;
+}
+
+@mixin set-placeholder-color($color) {
+	::-webkit-input-placeholder {
+		color: $color;
+	}
+	:-moz-placeholder {
+		color: $color;
+	}
+	::-moz-placeholder {
+		color: $color;
+	}
+	:-ms-input-placeholder {
+		color: $color;
+	}
+}
+
+@mixin backdrop-filter($value) {
+    backdrop-filter: blur($value);  
+    -webkit-backdrop-filter: blur($value);
+}
