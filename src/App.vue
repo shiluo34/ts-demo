@@ -10,6 +10,6 @@ import { Component } from 'vue-property-decorator';
 
 @Component({})
 export default class App extends Vue {
-  name = 'shiluo34';
+  name = 'shiluo34ccy';
 }
 </script>
